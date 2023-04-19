@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate = "layout/main.html">
+
+    <div layout:fragment = "mainContent">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center">Electronic shop items</h2>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-10 d-flex flex-wrap gap-5 mx-auto">
+                <div class="card" style="width: 20rem; background-color: rgba(13,108,122,0.16); border-style: none;" th:each="item : ${items}">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" style="color: rgba(36,93,122,1);" th:text="${item.name}"></h5>
+                        <p class="card-text" th:text="${item.description}"></p>
+                        <h5 class="card-title" style="color: green" th:text="${item.price + '  $'}"></h5>
+                        <a th:href="@{'/details/'+${item.id}}" class="btn btn-success mt-2">DETAILS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>

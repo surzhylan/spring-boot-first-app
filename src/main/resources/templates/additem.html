@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/main.html">
+
+    <div layout:fragment="mainContent">
+        <div class="row">
+            <div class="col-6 mx-auto">
+                <form th:action="@{'/additem'}" method="post">
+                    <label class="form-label">Name: </label>
+                    <input type="text" class="form-control" placeholder="Insert item name:" name="name"><br>
+                    <label class="form-label">Description: </label>
+                    <input type="text" class="form-control" placeholder="Insert description:" name="description"><br>
+                    <label class="form-label">Price: </label>
+                    <input type="number" class="form-control" placeholder="Insert price:" name="price"><br>
+                    <button class="btn btn-success">Add Item</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</html>
